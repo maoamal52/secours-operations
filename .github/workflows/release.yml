@@ -1,0 +1,23 @@
+name: Génération Automatique des Patch Notes
+
+on:
+  push:
+    tags:
+      - 'v*' # Se déclenche à chaque fois que tu crées un tag qui commence par "v" (ex: v1.0.0)
+
+permissions:
+  contents: write # Donne l'autorisation à GitHub de créer la release pour toi
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Créer la Release et le Patch Note
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
