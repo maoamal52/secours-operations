@@ -1,0 +1,13 @@
+changelog:
+  categories:
+    - title: "🚒 Nouvelles Fonctionnalités"
+      labels:
+        - enhancement
+        - feature
+    - title: "🐛 Correctifs de Bugs"
+      labels:
+        - bug
+        - fix
+    - title: "⚡ Optimisations"
+      labels:
+        - performance
